@@ -288,3 +288,8 @@ function fetchWithAutoRetry(fetcher, maximumRetryCount) {
     }
   })
 }
+
+166.Validate Number String
+function validateNumberString(str) {
+  return str !=="" && !isNaN(str)
+}
