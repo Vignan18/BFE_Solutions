@@ -261,3 +261,18 @@ function elementAfter(arr, target){
 }
 
  
+66. remove Duplicates from array
+function deduplicate(arr) {
+   const seen = new Set();
+  let i = 0;
+  while (i < arr.length) {
+    const val = arr[i];
+    if (seen.has(val)) {
+      arr[i] = arr[arr.length - 1];
+      arr.pop();
+    } else {
+      seen.add(val);
+      i++;
+    }
+  }
+}
