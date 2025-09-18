@@ -319,3 +319,21 @@ function add(num1, num2) {
   }
   return result.reverse().join("");
 }
+
+81. Merge sorted Arrays
+function merge(arrList) {
+  if (arrList.length === 0) return []
+  return arrList.reduce(mergeTwo)
+}
+function mergeTwo(a, b) {
+  const result = [];
+  let ai = 0, bi = 0;
+  while (ai < a.length || bi < b.length) {
+    if (bi >= b.length || a[ai] < b[bi]) {
+      result.push(a[ai++])
+    } else {
+      result.push(b[bi++])
+    }
+  }
+  return result
+}
