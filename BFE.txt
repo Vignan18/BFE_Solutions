@@ -305,3 +305,17 @@ function compare(v1, v2) {
   }
   return 0;
 }
+62.Big Int Addition
+function add(num1, num2) {
+  // your code here
+   let a = num1.split('').map(Number);
+  let b = num2.split('').map(Number);
+  let carry = 0;
+  let result = [];
+  while (a.length || b.length || carry) {
+    const sum = (a.pop() ?? 0) + (b.pop() ?? 0) + carry;
+    carry = sum < 10 ? 0 : 1;
+    result.push(sum % 10);
+  }
+  return result.reverse().join("");
+}
