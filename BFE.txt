@@ -276,3 +276,15 @@ function deduplicate(arr) {
     }
   }
 }
+
+64. retry promise
+function fetchWithAutoRetry(fetcher, maximumRetryCount) {
+  // your code here
+   return fetcher().catch((e) => {
+    if (maximumRetryCount === 0) {
+      throw e 
+    } else {
+      return fetchWithAutoRetry(fetcher, maximumRetryCount - 1)
+    }
+  })
+}
